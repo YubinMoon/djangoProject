@@ -6,5 +6,5 @@ from bookmark.models import Bookmark
 
 
 @admin.register(Bookmark)
-class BookAdmin(admin.ModelAdmin):
+class BookMarkAdmin(admin.ModelAdmin):
     list_display = ("id", "title", "url")

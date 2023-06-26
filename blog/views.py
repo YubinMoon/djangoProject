@@ -30,7 +30,7 @@ class PostAV(ArchiveIndexView):
 
 class PostYAV(YearArchiveView):
     model = Post
-    data_field = "modify_dt"
+    date_field = "modify_dt"
     make_object_list = True
     # month_format = "%m"
 

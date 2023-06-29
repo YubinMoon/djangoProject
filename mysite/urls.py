@@ -20,10 +20,13 @@ from django.contrib import admin
 from django.urls import include, path
 from bookmark.views import BookmarkLV, BookmarkDV
 
-from mysite.views import HomeView
+from mysite.views import HomeView, UserCreateDoneTV, UserCreateView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("accounts/", include("django.contrib.auth.urls")),
+    path("accounts/register/", UserCreateView.as_view(), name="register"),
+    path("accounts/register/done/", UserCreateDoneTV.as_view(), name="register_done"),
     path("", HomeView.as_view(), name="home"),
     path("blog/", include("blog.urls")),
     path("photo/", include("photo.urls")),

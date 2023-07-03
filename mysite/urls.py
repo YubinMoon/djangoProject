@@ -30,7 +30,5 @@ urlpatterns = [
     path("", HomeView.as_view(), name="home"),
     path("blog/", include("blog.urls")),
     path("photo/", include("photo.urls")),
-    path("bookmark/", BookmarkLV.as_view(), name="index"),
-    path("bookmark/<int:pk>/", BookmarkDV.as_view(), name="detail"),
     path("bookmark/", include("bookmark.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
